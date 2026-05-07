@@ -23,12 +23,12 @@ Span::Span(const Span &obj)
 Span::Span(unsigned int N)
     :c(0)
 {
-    N = 0;
+    total = N;
 }
 
 void Span::addNumber(unsigned int N)
 {
-    if (c >= v.size())
+    if (c >= total)
     {
         throw(std::runtime_error("exceeded the available slots for the Span.\n"));
     }
@@ -40,7 +40,7 @@ void    Span::addWhole(std::vector<int>::iterator b, std::vector<int>::iterator 
 {
     for (std::vector<int>::iterator it = b; it != e; it++)
     {
-        if (c >= v.size())
+        if (c >= total)
         {
             throw(std::runtime_error("exceeded the available slots for the Span.\n"));
         }
@@ -66,7 +66,6 @@ int Span::shortestSpan(void)
             diff = copy.at(r) - copy.at(l);
         if (diff > (copy.at(r) - copy.at(l)))
             diff = copy.at(r) - copy.at(l);
-        std::cout << diff << " " << copy.at(r) << " " << copy.at(l) << "\n";
         l += 1;
     }
     return (diff);

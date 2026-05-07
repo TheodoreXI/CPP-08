@@ -10,7 +10,8 @@ class Span
 {
     private:
         std::vector<int> v;
-        size_t           c;
+        size_t          c;
+		size_t			total;
     public:
         Span(void);
         ~Span(void);
