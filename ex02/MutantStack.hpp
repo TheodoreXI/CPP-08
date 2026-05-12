@@ -11,8 +11,8 @@ template <typename T>
 class MutantStack : public std::stack<T>
 {
     public:
-    	typedef typename std::deque<T>::iterator iterator;
-        typename std::deque<T>::iterator it;
+        typedef typename std::deque<T>::iterator iterator;
+        iterator it;
         MutantStack(void)
         {
             std::cout << "default constructor called\n";
